@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="Your Name"
+        android:key="username"
+        android:summary="Please provide your username"/>
+    <ListPreference
+        android:title="Cambiar Fuente"
+        android:summary="En esta opcion podras cambiar los tipos de fuente de los textos."
+        android:key="fuente"
+        android:defaultValue="1"
+        android:entries="@array/listArray2"
+        android:entryValues="@array/listValues" />
+    <ListPreference
+        android:title="Cambiar Estilos"
+        android:summary="En esta opcion podras cambiar los temas de la aplicacion."
+        android:key="estilos"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+</PreferenceScreen>

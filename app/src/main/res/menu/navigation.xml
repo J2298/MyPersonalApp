@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/usuario"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/inicio"
+            android:checked="true"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Inicio" />
+
+        <item
+            android:id="@+id/datos"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="Mis Datos" />
+
+        <item
+            android:id="@+id/configuracion"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Configuracion" />
+
+        <item
+            android:id="@+id/cerrar_sesion"
+            android:icon="@android:drawable/ic_menu_mapmode"
+            android:title="Cerrar Sesion"/>
+
+    </group>
+</menu>

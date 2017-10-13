@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MyPersonalApp</string>
+    <string-array name="listArray">
+        <item>Tema Oscuro</item>
+        <item>Tema Claro</item>
+        <item>Tema Aleatorio</item>
+    </string-array>
+
+    <string-array name="listArray2">
+        <item>Tipo GreenAvocado</item>
+        <item>Tipo AndroidNationBold</item>
+        <item>WalkwayBlack</item>
+    </string-array>
+
+    <string-array name="listValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
