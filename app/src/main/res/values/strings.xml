@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">MyPersonalApp</string>
+    <string name="register_fullname">Registrar Apellido</string>
+    <string name="register_email">Registrar Correo</string>
+    <string name="register_password">Registrar Contraseña</string>
+    <string name="register_save">Guardar</string>
+
     <string-array name="listArray">
         <item>Tema Oscuro</item>
         <item>Tema Claro</item>

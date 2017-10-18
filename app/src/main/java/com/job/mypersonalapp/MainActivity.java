@@ -1,16 +1,18 @@
 package com.job.mypersonalapp;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import org.polaric.colorful.CActivity;
+import com.job.mypersonalapp.models.User;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+
+
     public void callLogin(View view){
         loginPanel.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
@@ -63,16 +67,17 @@ public class MainActivity extends AppCompatActivity  {
         }
 
         // Login logic
-       // User user = UserRepository.login(username, password);
+       User user = UserRepository.login(username, password);
 
-       /* if(user == null){
+       if(user == null){
+           //dialog
 
-            User user1 = UserRepository.crearUsuario(username, password);
+           UserRepository.showDialog(this, username, password);
             Toast.makeText(this, "Username or password invalid", Toast.LENGTH_SHORT).show();
             loginPanel.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
-        }*/
+        }
 
         Toast.makeText(this, "Welcome " + username, Toast.LENGTH_SHORT).show();
 
@@ -93,5 +98,8 @@ public class MainActivity extends AppCompatActivity  {
 
         finish();
     }
+
+
+
 
 }
