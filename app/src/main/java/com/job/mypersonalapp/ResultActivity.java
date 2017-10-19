@@ -44,12 +44,12 @@ public class ResultActivity extends AppCompatActivity {
 
         final String fuente = sharedPreferences.getString("fuente", null);
         if (fuente.equals("1")) {
-           // Toast.makeText(this, "No hay valor", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "No hay valor", Toast.LENGTH_SHORT).show();
             usernameText.setTypeface(EasyFonts.greenAvocado(this));
         } else if (fuente.equals("2")) {
-           // Toast.makeText(this, "asdasr", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "asdasr", Toast.LENGTH_SHORT).show();
             usernameText.setTypeface(EasyFonts.androidNationBold(this));
-        }else if (fuente.equals("3")){
+        } else if (fuente.equals("3")) {
             usernameText.setTypeface(EasyFonts.walkwayBlack(this));
         }
 

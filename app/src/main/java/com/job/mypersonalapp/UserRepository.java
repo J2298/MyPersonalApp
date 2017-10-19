@@ -20,43 +20,49 @@ public class UserRepository {
         users.add(new User(300, "drodriguez", "tecsup", "David Rodriguez"));
     }*/
 
-    public static List<User> list(){
+    public static List<User> list() {
         List<User> users = SugarRecord.listAll(User.class);
         return users;
     }
 
-    public static User login(String username, String password){
+    public static User login(Context context, String username, String password) {
         List<User> users = list();
-        for (User user : users){
-            if(user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)){
-                return user;
+        for (User user : users) {
+            if (user.getUsername().equalsIgnoreCase(username)) {
+                if (user.getPassword().equals(password)) {
+                    return user;
+                }
+                Toast.makeText(context, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
+                return null;
             }
         }
+        showDialog(context, username, password);
         return null;
     }
 
-    public static Boolean valdidar(String username){
+
+    public static Boolean valdidar(String username) {
         List<User> users = list();
-        for (User user : users){
-            if(user.getUsername().equalsIgnoreCase(username)){
+        for (User user : users) {
+            if (user.getUsername().equalsIgnoreCase(username)) {
                 return false;
             }
         }
         return true;
     }
-    
-    public static User read(Long id){
+
+    public static User read(Long id) {
         User user = SugarRecord.findById(User.class, id);
         return user;
     }
 
-    public static void create(String fullname, String username, String password){
+    public static void create(String fullname, String username, String password) {
         User user = new User(fullname, username, password);
         valdidar(username);
         SugarRecord.save(user);
     }
 
-    public static void update(String fullname, String username, String password, Long id){
+    public static void update(String fullname, String username, String password, Long id) {
         User user = SugarRecord.findById(User.class, id);
         user.setFullname(fullname);
         user.setUsername(username);
@@ -64,21 +70,22 @@ public class UserRepository {
         SugarRecord.save(user);
     }
 
-    public static void delete(Long id){
+    public static void delete(Long id) {
         User user = SugarRecord.findById(User.class, id);
         SugarRecord.delete(user);
     }
-    public static User getUser(String username){
+
+    public static User getUser(String username) {
         List<User> users = list();
-        for (User user : users){
-            if(user.getUsername().equalsIgnoreCase(username)){
+        for (User user : users) {
+            if (user.getUsername().equalsIgnoreCase(username)) {
                 return user;
             }
         }
         return null;
     }
 
-    public static void showDialog(final Context context, final String username, final String password){
+    public static void showDialog(final Context context, final String username, final String password) {
 
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.custom_dialog);

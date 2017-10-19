@@ -67,12 +67,9 @@ public class MainActivity extends AppCompatActivity  {
         }
 
         // Login logic
-       User user = UserRepository.login(username, password);
+       User user = UserRepository.login(this, username, password);
 
        if(user == null){
-           //dialog
-
-           UserRepository.showDialog(this, username, password);
             Toast.makeText(this, "Username or password invalid", Toast.LENGTH_SHORT).show();
             loginPanel.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
@@ -85,6 +82,7 @@ public class MainActivity extends AppCompatActivity  {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         boolean success = editor
                 .putString("username", username)
+                .putString("fuente", "1")
                 .putBoolean("islogged", true)
                 .commit();
 
